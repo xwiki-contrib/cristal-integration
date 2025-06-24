@@ -17,7 +17,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.xwiki.rest.resources;
+package org.xwiki.contrib.cristal.integration.rest.resources;
 
 import javax.ws.rs.Encoded;
 import javax.ws.rs.GET;
@@ -31,6 +31,7 @@ import org.xwiki.rest.XWikiRestException;
 /**
  * Provides wiki resources to a Cristal client.
  *
+ * @since 1.0.0
  * @version $Id$
  */
 @Path("/cristal")

@@ -2,7 +2,7 @@
 
 APIs and services to integrate with a Cristal instance.
 
-* Project Lead: [Manuel Leduc](https://www.xwiki.org/xwiki/bin/view/XWiki/mleduc)
+* Project Lead: [Pierre Jeanjean](https://www.xwiki.org/xwiki/bin/view/XWiki/pjeanjean)
 * Documentation & Downloads: [Documentation & Download](https://extensions.xwiki.org/xwiki/bin/view/Extension/Cristal%20Integration)
 * [Issue Tracker](https://jira.xwiki.org/browse/CRISTALINT)
 * Communication: [Forum](https://forum.xwiki.org/), [Chat](https://dev.xwiki.org/xwiki/bin/view/Community/Chat)

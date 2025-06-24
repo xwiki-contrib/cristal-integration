@@ -17,7 +17,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.xwiki.rest.internal.resources;
+package org.xwiki.contrib.cristal.integration.rest.internal.resources;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -32,7 +32,7 @@ import org.xwiki.component.annotation.Component;
 import org.xwiki.model.reference.DocumentReference;
 import org.xwiki.rest.XWikiResource;
 import org.xwiki.rest.XWikiRestException;
-import org.xwiki.rest.resources.CristalResource;
+import org.xwiki.contrib.cristal.integration.rest.resources.CristalResource;
 import org.xwiki.security.authorization.AccessDeniedException;
 import org.xwiki.security.authorization.ContextualAuthorizationManager;
 import org.xwiki.security.authorization.Right;
@@ -53,7 +53,7 @@ import jakarta.json.JsonObjectBuilder;
  * @version $Id$
  */
 @Component
-@Named("org.xwiki.rest.internal.resources.CristalResourceImpl")
+@Named("org.xwiki.contrib.cristal.integration.rest.internal.resources.CristalResourceImpl")
 public class CristalResourceImpl extends XWikiResource implements CristalResource
 {
     @Inject
@@ -67,11 +67,8 @@ public class CristalResourceImpl extends XWikiResource implements CristalResourc
             List<String> spaces = parseSpaceSegments(spaceName);
 
             DocumentReference documentReference = new DocumentReference(wikiName, spaces, pageName);
-            try {
-                this.contextualAuthorizationManager.checkAccess(Right.VIEW, documentReference);
-            } catch (AccessDeniedException e) {
-                throw new WebApplicationException(Response.Status.UNAUTHORIZED);
-            }
+
+            this.contextualAuthorizationManager.checkAccess(Right.VIEW, documentReference);
 
             DocumentInfo documentInfo = getDocumentInfo(wikiName, spaceName, pageName, null, revision, true, false);
             Document doc = documentInfo.getDocument();
@@ -94,30 +91,32 @@ public class CristalResourceImpl extends XWikiResource implements CristalResourc
             } else {
                 return Response.ok().entity(doc).build();
             }
+        } catch (AccessDeniedException e) {
+            throw new WebApplicationException(Response.Status.UNAUTHORIZED);
         } catch (XWikiException e) {
             throw new XWikiRestException(e);
         }
     }
 
-    private void mapJsonStandardFields(JsonObjectBuilder jsonBuilder, Document doc) throws XWikiException
+    private void mapJsonStandardFields(JsonObjectBuilder jsonBuilder, Document doc)
     {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
         jsonBuilder
             .add("identifier", doc.getFullName())
             .add("url", doc.getExternalURL())
             .add("name",
-                doc.getName().equals("WebHome")
+                doc.getDocumentReference().getName().equals("WebHome")
                     ? doc.getDocumentReference().getParent().getName()
-                    : doc.getName())
+                    : doc.getDocumentReference().getName())
             .add("headline", doc.getPlainTitle())
             .add("headlineRaw", doc.getTitle())
-            .add("language", doc.getRealLanguage())
+            .add("language", doc.getRealLocale().getLanguage())
             .add("dateCreated", sdf.format(doc.getCreationDate()))
             .add("dateModified", sdf.format(doc.getDate()))
             .add("creator", doc.getCreator())
             .add("editor", doc.getAuthor())
             .add("version", doc.getVersion())
-            .add("encodingFormat", doc.getSyntaxId())
+            .add("encodingFormat", doc.getSyntax().toIdString())
             .add("text", doc.getContent());
     }
 }
