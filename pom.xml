@@ -41,6 +41,8 @@
     <!-- Enable auto release on jira -->
     <xwiki.release.jira.skip>false</xwiki.release.jira.skip>
     <xwiki.issueManagement.jira.id>CRISTALINT</xwiki.issueManagement.jira.id>
+    <markdown.version>8.9</markdown.version>
+    <oidc.version>2.18.2</oidc.version>
   </properties>
   <developers>
     <developer>
