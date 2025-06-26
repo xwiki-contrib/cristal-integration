@@ -75,27 +75,5 @@
       <version>${oidc.version}</version>
       <scope>runtime</scope>
     </dependency>
-
-    <!-- Required for syntax-markdown-commonmark12 -->
-    <dependency>
-      <groupId>org.xwiki.rendering</groupId>
-      <artifactId>xwiki-rendering-syntax-plain</artifactId>
-      <version>${rendering.version}</version>
-      <scope>runtime</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.xwiki.rendering</groupId>
-      <artifactId>xwiki-rendering-syntax-xwiki21</artifactId>
-      <version>${rendering.version}</version>
-      <scope>runtime</scope>
-    </dependency>
-
-    <!-- Required for oidc-provider -->
-    <dependency>
-      <groupId>org.xwiki.platform</groupId>
-      <artifactId>xwiki-platform-container-servlet</artifactId>
-      <version>${platform.version}</version>
-      <scope>runtime</scope>
-    </dependency>
   </dependencies>
 </project>
