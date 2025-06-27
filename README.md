@@ -11,4 +11,4 @@ APIs and services to integrate with a Cristal instance.
 * License: LGPL 2.1
 * Translations: N/A
 * Sonar Dashboard: [![Status](https://sonarcloud.io/api/project_badges/measure?project=org.xwiki.contrib.cristal.integration:cristal-integration&metric=alert_status)](https://sonarcloud.io/dashboard?id=org.xwiki.contrib.cristal.integration:cristal-integration)
-* Continuous Integration Status: [![Build Status](https://ci.xwiki.org/job/XWiki%20Contrib/job/cristal-integration/job/master/badge/icon)](https://ci.xwiki.org/job/XWiki%20Contrib/job/cristal-integration/job/master/)
+* Continuous Integration Status: [![Build Status](https://ci.xwiki.org/job/XWiki%20Contrib/job/cristal-integration/job/master/badge/icon)](https://ci.xwiki.org/job/XWiki%20Contrib/job/cristal-integration/job/main/)
