@@ -53,6 +53,12 @@
     </developer>
   </developers>
 
+  <scm>
+    <connection>scm:git:git://github.com/xwiki-contrib/cristal-integration.git</connection>
+    <developerConnection>scm:git:git@github.com:xwiki-contrib/cristal-integration.git</developerConnection>
+    <url>https://github.com/xwiki-contrib/cristal-integration/tree/master</url>
+  </scm>
+
   <dependencyManagement>
     <dependencies>
       <dependency>
