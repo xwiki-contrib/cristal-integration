@@ -1,0 +1,2 @@
+org.xwiki.contrib.cristal.integration.resource.internal.CristalResourceReferenceHandler
+org.xwiki.contrib.cristal.integration.resource.internal.CristalResourceReferenceResolver
