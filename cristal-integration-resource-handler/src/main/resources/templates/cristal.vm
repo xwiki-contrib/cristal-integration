@@ -40,7 +40,7 @@
         }
     })
   </script>
-  <script type="module" crossorigin src="$escapetool.xml($services.webjars.url('org.xwiki.contrib.cristal.integration:cristal-integration-webjar', 'index.es.js'))"></script>
+  <script type="module" src="$escapetool.xml($services.webjars.url('org.xwiki.contrib.cristal.integration:cristal-integration-webjar', 'index.es.js'))"></script>
 </head>
 <body>
 <div id="xwCristalApp" class="xw-cristal"></div>
