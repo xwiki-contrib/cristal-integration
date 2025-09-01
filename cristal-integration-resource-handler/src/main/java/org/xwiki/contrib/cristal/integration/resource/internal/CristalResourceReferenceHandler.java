@@ -25,9 +25,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Singleton;
 
-import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.xwiki.component.annotation.Component;
-import org.xwiki.container.Container;
 import org.xwiki.context.Execution;
 import org.xwiki.context.ExecutionContext;
 import org.xwiki.contrib.cristal.integration.resource.CristalResourceReference;
@@ -56,9 +54,6 @@ public class CristalResourceReferenceHandler extends AbstractResourceReferenceHa
     private XWikiContextInitializer xWikiContextInitializer;
 
     @Inject
-    private Container container;
-
-    @Inject
     private Execution execution;
 
     @Override
@@ -83,8 +78,7 @@ public class CristalResourceReferenceHandler extends AbstractResourceReferenceHa
             Utils.parseTemplate(templateName, true, context);
         } catch (Exception e) {
             throw new ResourceReferenceHandlerException(
-                String.format("Error while rendering template [%s]: [%s].",
-                    templateName, ExceptionUtils.getRootCauseMessage(e)), e);
+                String.format("Error while rendering template [%s].", templateName), e);
         }
 
         chain.handleNext(reference);

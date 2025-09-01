@@ -66,6 +66,23 @@
     </dependency>
 
     <dependency>
+      <groupId>org.webjars.npm</groupId>
+      <artifactId>vue</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.webjars.npm</groupId>
+      <artifactId>vue-i18n</artifactId>
+      <version>11.1.5</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.xwiki.contrib.cristal.integration</groupId>
+      <artifactId>cristal-integration-rest-server</artifactId>
+      <version>${project.version}</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
       <groupId>org.xwiki.contrib.cristal.integration</groupId>
       <artifactId>cristal-integration-webjar</artifactId>
       <version>${project.version}</version>

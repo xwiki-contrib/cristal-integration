@@ -35,8 +35,6 @@
   <properties>
     <xwiki.extension.name>Cristal Integration - WebJar</xwiki.extension.name>
     <xwiki.extension.category>webjar</xwiki.extension.category>
-    <!-- Vite is already taking care of minification and bundling in an efficient way. -->
-    <xwiki.minification.skip>true</xwiki.minification.skip>
   </properties>
 
   <dependencies>
