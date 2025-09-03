@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "jsx": "preserve",
+    "noEmit": true,
+    "target": "es2021",
+    "lib": [
+      "es2021",
+      "dom"
+    ],
+    "module": "esnext",
+    "moduleResolution": "Bundler",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noImplicitAny": true,
+    "preserveConstEnums": true,
+    "suppressImplicitAnyIndexErrors": false,
+    "allowSyntheticDefaultImports": true,
+    "noResolve": false,
+    "noUnusedParameters": false,
+    "noUnusedLocals": true,
+    "strictNullChecks": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "isolatedModules": true,
+    "isolatedDeclarations": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "noImplicitOverride": true
+  },
+  "vueCompilerOptions": {
+    "strictTemplates": true
+  },
+  "include": [
+    "src",
+    "./src/index.ts",
+    "./src/index.html",
+    "./src/**/*",
+    "components.d.ts"
+  ],
+  "exclude": [
+    "**/*.spec.ts",
+    "**/*.test.ts"
+  ]
+}
