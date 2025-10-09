@@ -30,7 +30,7 @@
     "@xwiki/cristal-link-suggest-xwiki": "0.21.1",
     "@xwiki/cristal-model-reference-xwiki": "0.21.1",
     "@xwiki/cristal-model-remote-url-xwiki": "0.21.1",
-    "@xwiki/cristal-navigation-tree-xwiki": "0.21.1",
+    "@xwiki/cristal-navigation-tree-xwiki": "0.22.0",
     "@xwiki/cristal-settings-browser": "0.21.1",
     "express": "5.1.0",
     "inversify": "7.7.0",
