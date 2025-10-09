@@ -18,8 +18,10 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
  {
+   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
    "extends": ["config:recommended"],
-  // We want all suggestions right away
+   dependencyDashboardApproval: false,
+   // We want all suggestions right away
   "prHourlyLimit" : 0,
   "prConcurrentLimit" : 0,
 
