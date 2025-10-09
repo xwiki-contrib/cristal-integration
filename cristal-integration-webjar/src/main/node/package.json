@@ -18,7 +18,7 @@
     "type-check": "vue-tsc --build"
   },
   "dependencies": {
-    "@xwiki/cristal-authentication-github": "0.21.1",
+    "@xwiki/cristal-authentication-github": "0.22.0",
     "@xwiki/cristal-authentication-nextcloud": "0.21.1",
     "@xwiki/cristal-authentication-xwiki": "0.21.1",
     "@xwiki/cristal-browser-default": "0.21.1",
