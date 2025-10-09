@@ -25,7 +25,7 @@
     "@xwiki/cristal-dsvuetify": "0.21.1",
     "@xwiki/cristal-editors-blocknote": "0.21.1",
     "@xwiki/cristal-hierarchy-xwiki": "0.21.1",
-    "@xwiki/cristal-history-xwiki": "0.21.1",
+    "@xwiki/cristal-history-xwiki": "0.22.0",
     "@xwiki/cristal-lib": "0.21.1",
     "@xwiki/cristal-link-suggest-xwiki": "0.21.1",
     "@xwiki/cristal-model-reference-xwiki": "0.21.1",
