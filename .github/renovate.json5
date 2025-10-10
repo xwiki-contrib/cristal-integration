@@ -39,6 +39,15 @@
     {
       "matchPackagePrefixes": ["org.xwiki.commons:", "org.xwiki.rendering:", "org.xwiki.platform:", "org.xwiki.enterprise:", "org.xwiki.contrib:parent-"],
       "enabled": false
+    },
+
+    // Group all cristal releases in the same PR.
+    {
+      "matchDatasources": [
+        "npm"
+      ],
+      "groupName": "cristal",
+      "matchDepPatterns": "@xwiki/cristal-.+"
     }
   ]
 }
