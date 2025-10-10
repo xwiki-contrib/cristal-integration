@@ -63,3 +63,6 @@ nbproject
 .sonar-ide.properties
 .clover
 *~
+
+# npm
+node_modules/
