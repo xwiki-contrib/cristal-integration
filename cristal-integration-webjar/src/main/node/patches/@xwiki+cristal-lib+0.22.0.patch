@@ -1,0 +1,22 @@
+diff --git a/node_modules/@xwiki/cristal-lib/dist/index.es.js b/node_modules/@xwiki/cristal-lib/dist/index.es.js
+index e6b3761..ee364ac 100644
+--- a/node_modules/@xwiki/cristal-lib/dist/index.es.js
++++ b/node_modules/@xwiki/cristal-lib/dist/index.es.js
+@@ -7,7 +7,7 @@
+ import { injectable as $, inject as m, multiInject as A } from "inversify";
+ import { createPinia as x } from "pinia";
+ import { createI18n as M } from "vue-i18n";
+-import { createRouter as T, createWebHashHistory as W } from "vue-router";
++import { createRouter as T, createWebHistory as W } from "vue-router";
+ import { CristalLoader as L } from "@xwiki/cristal-extension-manager";
+ import { ConfigurationsSettings as R, ComponentInit as j } from "@xwiki/cristal-settings-configurations";
+ import { ComponentInit as D } from "@xwiki/cristal-alerts-default";
+@@ -272,7 +272,7 @@
+        anything special server-side (which is good for partability), and works
+        well with electron.
+       */
+-      history: W(),
++      history: W("/xwiki/cristal"),
+       routes: e
+     }), this.app = v(Ct).use(this.router).use(x()).use(M({ legacy: !1, fallbackLocale: "en" })), this.app.provide("count", 0), this.app.provide("skinManager", this.skinManager), this.app.provide("cristal", this), this.skinManager.loadDesignSystem(this.app, this.container);
+     const n = this.container.getAll(
