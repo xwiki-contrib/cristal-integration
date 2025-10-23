@@ -19,7 +19,7 @@
  */
 
 import { injectable } from "inversify";
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 import type { RouterFactory } from "@xwiki/cristal-lib";
 import type { Container } from "inversify";
 import type { RouteRecordRaw, Router } from "vue-router";
@@ -28,7 +28,7 @@ import type { RouteRecordRaw, Router } from "vue-router";
 class XWikiRouterFactory implements RouterFactory {
   initializeRouter(routes: RouteRecordRaw[]): Router {
     const router = createRouter({
-      history: createWebHistory("/xwiki/cristal"),
+      history: createWebHashHistory("/xwiki/cristal"),
       routes,
     });
 
