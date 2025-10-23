@@ -29,7 +29,7 @@
     "@xwiki/cristal-model-remote-url-xwiki": "0.23.1",
     "@xwiki/cristal-navigation-tree-xwiki": "0.23.1",
     "@xwiki/cristal-settings-browser": "0.23.1",
-    "inversify": "7.7.0",
+    "inversify": "7.10.3",
     "vue-router": "4.5.1"
   },
   "devDependencies": {
