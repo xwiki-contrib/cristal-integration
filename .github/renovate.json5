@@ -24,6 +24,8 @@
    // We want all suggestions right away
   "prHourlyLimit" : 0,
   "prConcurrentLimit" : 0,
+  // Prefix update commit with [Misc] by default.
+  "commitMessageAction": "[Misc] Update",
 
   // Skip Eclipse M2E special setup "dependency"
   "ignoreDeps": ["org.eclipse.m2e:lifecycle-mapping"],
