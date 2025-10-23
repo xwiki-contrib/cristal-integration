@@ -10,7 +10,7 @@
       "dom"
     ],
     "module": "esnext",
-    "moduleResolution": "Bundler",
+    "moduleResolution": "bundler",
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
@@ -35,11 +35,7 @@
     "strictTemplates": true
   },
   "include": [
-    "src",
-    "./src/index.ts",
-    "./src/index.html",
-    "./src/**/*",
-    "components.d.ts"
+    "./src/index.ts"
   ],
   "exclude": [
     "**/*.spec.ts",
