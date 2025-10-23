@@ -18,6 +18,7 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
 
+import { ComponentInit as XWikiRouterComponentInit } from "./components/router";
 import { CristalAppLoader, defaultComponentsList } from "@xwiki/cristal-lib";
 import { ComponentInit as AuthenticationXWikiComponentInit } from "@xwiki/cristal-authentication-xwiki";
 import { ComponentInit as BrowserComponentInit } from "@xwiki/cristal-browser-default";
@@ -60,8 +61,9 @@ CristalAppLoader.init(
     new BrowserComponentInit(container);
     new AuthenticationXWikiComponentInit(container);
     new BrowserSettingsComponentInit(container);
+    new XWikiRouterComponentInit(container);
   },
-  async (container, configuration) => {
+  async (container) => {
     new VueDSComponentInit(container);
 
     new XWikiLinkSuggestComponentInit(container);
