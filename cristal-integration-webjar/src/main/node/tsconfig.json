@@ -35,7 +35,8 @@
     "strictTemplates": true
   },
   "include": [
-    "./src/index.ts"
+    "./src/index.ts",
+    "./src/components/*"
   ],
   "exclude": [
     "**/*.spec.ts",

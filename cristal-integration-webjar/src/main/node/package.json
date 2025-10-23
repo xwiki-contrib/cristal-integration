@@ -11,7 +11,6 @@
     "build-only": "vite build",
     "dev": "vite",
     "format": "prettier --write src/",
-    "postinstall": "patch-package",
     "lint": "eslint . --fix",
     "preview": "vite preview",
     "test:unit": "vitest --run",
@@ -30,7 +29,8 @@
     "@xwiki/cristal-model-remote-url-xwiki": "0.23.1",
     "@xwiki/cristal-navigation-tree-xwiki": "0.23.1",
     "@xwiki/cristal-settings-browser": "0.23.1",
-    "inversify": "7.7.0"
+    "inversify": "7.7.0",
+    "vue-router": "4.5.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "3.3.1",
@@ -49,8 +49,8 @@
     "jiti": "2.4.2",
     "jsdom": "26.1.0",
     "npm-run-all2": "7.0.2",
-    "patch-package": "8.0.0",
     "typescript": "5.9.2",
+    "typescript-eslint": "8.46.0",
     "vite": "7.0.7",
     "vitest": "3.2.4",
     "vue-tsc": "2.2.12"
