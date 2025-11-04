@@ -27,24 +27,17 @@
     <artifactId>cristal-integration</artifactId>
     <version>1.1.2-SNAPSHOT</version>
   </parent>
-  <artifactId>cristal-integration-rest-api</artifactId>
-  <packaging>jar</packaging>
-  <name>Cristal Integration - REST API</name>
-  <description>REST API to allow connection from a Cristal instance</description>
-  <properties>
-    <xwiki.extension.name>Cristal Integration - REST API</xwiki.extension.name>
-    <xwiki.extension.category>api</xwiki.extension.category>
-  </properties>
+  <artifactId>cristal-integration-test</artifactId>
+  <packaging>pom</packaging>
+  <name>Cristal Integration - REST Server - Tests</name>
+  <description>Functional tests for Cristal's REST API</description>
 
-  <dependencies>
-    <dependency>
-      <groupId>jakarta.ws.rs</groupId>
-      <artifactId>jakarta.ws.rs-api</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.xwiki.platform</groupId>
-      <artifactId>xwiki-platform-rest-api</artifactId>
-      <version>${platform.version}</version>
-    </dependency>
-  </dependencies>
+  <profiles>
+    <profile>
+      <id>docker</id>
+      <modules>
+        <module>cristal-integration-test-docker</module>
+      </modules>
+    </profile>
+  </profiles>
 </project>
