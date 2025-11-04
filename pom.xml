@@ -38,8 +38,17 @@
     <module>cristal-integration-rest-server</module>
     <module>cristal-integration-webjar</module>
     <module>cristal-integration-resource-handler</module>
-    <module>cristal-integration-rest-test</module>
   </modules>
+
+  <profiles>
+    <profile>
+      <id>integration-tests</id>
+      <modules>
+        <module>cristal-integration-test</module>
+      </modules>
+    </profile>
+  </profiles>
+
   <properties>
     <!-- Enable auto release on jira -->
     <xwiki.release.jira.skip>false</xwiki.release.jira.skip>
@@ -91,7 +100,7 @@
         <configuration>
           <analysisConfiguration>
             <revapi.differences>
-              <justification>Renamed to CristalPageResource to improve organisation of REST resources.</justification>
+              <justification>Renamed to CristalPageResource to improve organisation of REST resources. This has no functional impact, the REST endpoints are still the same.</justification>
               <criticality>documented</criticality>
               <differences>
                 <item>
