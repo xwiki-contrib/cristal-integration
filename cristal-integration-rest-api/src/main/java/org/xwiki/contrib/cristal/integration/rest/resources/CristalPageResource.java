@@ -34,8 +34,8 @@ import org.xwiki.rest.XWikiRestException;
  * @since 1.0.0
  * @version $Id$
  */
-@Path("/cristal")
-public interface CristalResource
+@Path("/cristal/wikis/{wikiName}/spaces/{spaceName: .+}/pages/{pageName}")
+public interface CristalPageResource
 {
     /**
      * Returns a page resource.
@@ -47,9 +47,7 @@ public interface CristalResource
      * @param revision - the page revision to request (default: latest available)
      * @return the page resource
      */
-    @GET
-    @Path("/wikis/{wikiName}/spaces/{spaceName: .+}/pages/{pageName}")
-    Response getPage(
+    @GET Response getPage(
         @PathParam("wikiName") String wikiName,
         @PathParam("spaceName") @Encoded String spaceName,
         @PathParam("pageName") String pageName,

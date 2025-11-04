@@ -38,6 +38,7 @@
     <module>cristal-integration-rest-server</module>
     <module>cristal-integration-webjar</module>
     <module>cristal-integration-resource-handler</module>
+    <module>cristal-integration-rest-test</module>
   </modules>
   <properties>
     <!-- Enable auto release on jira -->
@@ -81,4 +82,33 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.revapi</groupId>
+        <artifactId>revapi-maven-plugin</artifactId>
+        <configuration>
+          <analysisConfiguration>
+            <revapi.differences>
+              <justification>Renamed to CristalPageResource to improve organisation of REST resources.</justification>
+              <criticality>documented</criticality>
+              <differences>
+                <item>
+                  <ignore>true</ignore>
+                  <code>java.class.removed</code>
+                  <old>interface org.xwiki.contrib.cristal.integration.rest.resources.CristalResource</old>
+                </item>
+                <item>
+                  <ignore>true</ignore>
+                  <code>java.class.added</code>
+                  <new>interface org.xwiki.contrib.cristal.integration.rest.resources.CristalPageResource</new>
+                </item>
+              </differences>
+            </revapi.differences>
+          </analysisConfiguration>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>

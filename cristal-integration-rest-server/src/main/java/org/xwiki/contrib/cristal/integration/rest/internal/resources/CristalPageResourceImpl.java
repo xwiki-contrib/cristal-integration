@@ -29,7 +29,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import org.xwiki.component.annotation.Component;
-import org.xwiki.contrib.cristal.integration.rest.resources.CristalResource;
+import org.xwiki.contrib.cristal.integration.rest.resources.CristalPageResource;
 import org.xwiki.model.reference.DocumentReference;
 import org.xwiki.rest.XWikiResource;
 import org.xwiki.rest.XWikiRestException;
@@ -49,13 +49,13 @@ import jakarta.json.Json;
 import jakarta.json.JsonObjectBuilder;
 
 /**
- * Default implementation of {@link CristalResource}.
+ * Default implementation of {@link CristalPageResource}.
  *
  * @version $Id$
  */
 @Component
-@Named("org.xwiki.contrib.cristal.integration.rest.internal.resources.CristalResourceImpl")
-public class CristalResourceImpl extends XWikiResource implements CristalResource
+@Named("org.xwiki.contrib.cristal.integration.rest.internal.resources.CristalPageResourceImpl")
+public class CristalPageResourceImpl extends XWikiResource implements CristalPageResource
 {
     @Inject
     private ContextualAuthorizationManager contextualAuthorizationManager;
