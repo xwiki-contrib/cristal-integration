@@ -19,6 +19,7 @@
  */
 
 import { ComponentInit as XWikiRouterComponentInit } from "./components/router";
+import { ComponentInit as XWikiSwitchComponentInit } from "./ui/XWikiSwitchUIExtension";
 import { CristalAppLoader, defaultComponentsList } from "@xwiki/cristal-lib";
 import { ComponentInit as AuthenticationXWikiComponentInit } from "@xwiki/cristal-authentication-xwiki";
 import { ComponentInit as BrowserComponentInit } from "@xwiki/cristal-browser-default";
@@ -62,6 +63,7 @@ CristalAppLoader.init(
     new AuthenticationXWikiComponentInit(container);
     new BrowserSettingsComponentInit(container);
     new XWikiRouterComponentInit(container);
+    new XWikiSwitchComponentInit(container);
   },
   async (container) => {
     new VueDSComponentInit(container);

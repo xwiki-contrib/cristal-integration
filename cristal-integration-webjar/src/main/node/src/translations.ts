@@ -18,39 +18,9 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
 
+import en from "../langs/translation-en.json";
 
-import vue from "@vitejs/plugin-vue";
-import { dirname, resolve } from 'node:path'
-import { fileURLToPath } from 'node:url'
-import { defineConfig } from "vite";
-
-const __dirname = dirname(fileURLToPath(import.meta.url))
-
-export default defineConfig({
-  build: {
-    lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
-      fileName: (format, entryName) => `${entryName}.${format}.js`,
-      formats: ['es']
-    },
-    sourcemap: true,
-    rollupOptions: {
-      external: ['vue', 'vue-i18n'],
-      output: {
-        globals: {
-          vue: 'Vue'
-        }
-      },
-    },
-  },
-  define: {
-    // define process to avoid runtime error with jquery
-    'process.env': {}
-  },
-  plugins: [
-    vue(),
-  ],
-  worker: {
-    format: "es",
-  }
-});
+const translations: Record<string, Record<string, string>> = {
+  en,
+};
+export default translations;
