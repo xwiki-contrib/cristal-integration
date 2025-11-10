@@ -55,7 +55,7 @@
       <groupId>org.webjars.npm</groupId>
       <artifactId>vue-i18n</artifactId>
       <scope>runtime</scope>
-      <version>11.1.5</version>
+      <version>11.1.12</version>
     </dependency>
   </dependencies>
   <build>
