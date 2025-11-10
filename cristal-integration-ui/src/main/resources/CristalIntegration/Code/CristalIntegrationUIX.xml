@@ -20,9 +20,9 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 -->
 
-<xwikidoc version="1.6" reference="CristalIntegration.Code.NewsUIX" locale="">
+<xwikidoc version="1.6" reference="CristalIntegration.Code.CristalIntegrationUIX" locale="">
   <web>CristalIntegration.Code</web>
-  <name>NewsUIX</name>
+  <name>CristalIntegrationUIX</name>
   <language/>
   <defaultLanguage/>
   <translation>0</translation>
@@ -38,7 +38,117 @@
   <hidden>true</hidden>
   <content/>
   <object>
-    <name>CristalIntegration.Code.NewsUIX</name>
+    <name>CristalIntegration.Code.CristalIntegrationUIX</name>
+    <number>0</number>
+    <className>XWiki.JavaScriptExtension</className>
+    <guid>52815cdd-00ba-430c-a88f-bb987439428b</guid>
+    <class>
+      <name>XWiki.JavaScriptExtension</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <cache>
+        <cache>0</cache>
+        <defaultValue>long</defaultValue>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <freeText>forbidden</freeText>
+        <largeStorage>0</largeStorage>
+        <multiSelect>0</multiSelect>
+        <name>cache</name>
+        <number>5</number>
+        <prettyName>Caching policy</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators>|, </separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>long|short|default|forbid</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </cache>
+      <code>
+        <contenttype>PureText</contenttype>
+        <disabled>0</disabled>
+        <editor>PureText</editor>
+        <name>code</name>
+        <number>2</number>
+        <prettyName>Code</prettyName>
+        <restricted>0</restricted>
+        <rows>20</rows>
+        <size>50</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+      </code>
+      <name>
+        <disabled>0</disabled>
+        <name>name</name>
+        <number>1</number>
+        <prettyName>Name</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </name>
+      <parse>
+        <disabled>0</disabled>
+        <displayFormType>select</displayFormType>
+        <displayType>yesno</displayType>
+        <name>parse</name>
+        <number>4</number>
+        <prettyName>Parse content</prettyName>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+      </parse>
+      <use>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <freeText>forbidden</freeText>
+        <largeStorage>0</largeStorage>
+        <multiSelect>0</multiSelect>
+        <name>use</name>
+        <number>3</number>
+        <prettyName>Use this extension</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators>|, </separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>currentPage|onDemand|always</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </use>
+    </class>
+    <property>
+      <cache>long</cache>
+    </property>
+    <property>
+      <code>require(['xwiki-meta'], function (xm) {
+  // If there's no document reference in the context, then direct to the home page
+  var url = "/xwiki/cristal/#/";
+
+  if (xm.documentReference) {
+    const localDocumentReference = xm.documentReference.relativeTo(xm.documentReference.wiki);
+    url = `/xwiki/cristal/#/${XWiki.Model.serialize(localDocumentReference)}/view`;
+  }
+
+  shortcut.add("$services.localization.render('cristal.integration.shortcut')", function() { location.href=url; }, { 'disable_in_input': true, 'type': 'sequence' });
+});</code>
+    </property>
+    <property>
+      <name>Cristal Integration Keyboard Shortcut</name>
+    </property>
+    <property>
+      <parse>1</parse>
+    </property>
+    <property>
+      <use>always</use>
+    </property>
+  </object>
+  <object>
+    <name>CristalIntegration.Code.CristalIntegrationUIX</name>
     <number>0</number>
     <className>XWiki.UIExtensionClass</className>
     <guid>97288f15-54c1-4546-a39c-78c500932017</guid>
@@ -174,10 +284,6 @@
     #set ($url = '/xwiki/cristal/#/')
   #end
   #drawerItem($url, 'switch', $escapetool.xml($services.localization.render('cristal.integration.drawer.text')))
-
-  &lt;script&gt;
-  shortcut.add("$services.localization.render('cristal.integration.shortcut')", function() { location.href="${url}"; }, { 'disable_in_input': true, 'type': 'sequence' });
-  &lt;/script&gt;
 {{/html}}
 {{/velocity}}</content>
     </property>
