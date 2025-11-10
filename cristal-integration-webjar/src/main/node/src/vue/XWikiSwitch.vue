@@ -53,3 +53,10 @@ const remoteURLSerializer = cristal
     :title="t('xwiki.switch.action.title')"
   ><c-icon :size="Size.Small" name="shuffle"></c-icon></a>
 </template>
+
+<style scoped>
+a {
+  text-decoration: none;
+  color: inherit;
+}
+</style>
