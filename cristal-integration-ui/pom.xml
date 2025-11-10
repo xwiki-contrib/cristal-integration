@@ -34,7 +34,7 @@
 
   <properties>
     <xwiki.extension.category>application</xwiki.extension.category>
-    <xwiki.extension.name>Cristal Integration - UI</xwiki.extension.name>
+    <xwiki.extension.name>Cristal Integration Application</xwiki.extension.name>
   </properties>
 
   <dependencies>
