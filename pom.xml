@@ -38,6 +38,7 @@
     <module>cristal-integration-rest-server</module>
     <module>cristal-integration-webjar</module>
     <module>cristal-integration-resource-handler</module>
+    <module>cristal-integration-ui</module>
   </modules>
 
   <profiles>
