@@ -18,41 +18,31 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
 
+import { Container, injectable } from "inversify";
+import type { UIExtension } from "@xwiki/cristal-uiextension-api";
+import type { Component } from "vue";
 
-import vue from "@vitejs/plugin-vue";
-import { dirname, resolve } from 'node:path'
-import { fileURLToPath } from 'node:url'
-import { defineConfig } from "vite";
-import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
+@injectable()
+class XWikiSwitchUIExtension implements UIExtension {
+  id = "sidebar.actions.xwikiSwitch";
+  uixpName = "sidebar.actions";
+  order = 1000;
+  parameters = {};
 
-const __dirname = dirname(fileURLToPath(import.meta.url))
-
-export default defineConfig({
-  build: {
-    lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
-      fileName: (format, entryName) => `${entryName}.${format}.js`,
-      formats: ['es']
-    },
-    sourcemap: true,
-    rollupOptions: {
-      external: ['vue', 'vue-i18n'],
-      output: {
-        globals: {
-          vue: 'Vue'
-        }
-      },
-    },
-  },
-  define: {
-    // define process to avoid runtime error with jquery
-    'process.env': {}
-  },
-  plugins: [
-    vue(),
-    cssInjectedByJsPlugin(),
-  ],
-  worker: {
-    format: "es",
+  async component(): Promise<Component> {
+    return (await import("../vue/XWikiSwitch.vue")).default;
   }
-});
+
+  async enabled(): Promise<boolean> {
+    return true;
+  }
+}
+
+export class ComponentInit {
+  constructor(container: Container) {
+    container
+      .bind<UIExtension>("UIExtension")
+      .to(XWikiSwitchUIExtension)
+      .inSingletonScope();
+  }
+}

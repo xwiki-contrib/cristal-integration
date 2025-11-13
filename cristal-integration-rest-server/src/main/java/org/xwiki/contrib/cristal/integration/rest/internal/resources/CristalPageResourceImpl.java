@@ -30,7 +30,7 @@ import javax.ws.rs.core.Response;
 
 import org.xwiki.component.annotation.Component;
 import org.xwiki.component.phase.InitializationException;
-import org.xwiki.contrib.cristal.integration.rest.resources.CristalResource;
+import org.xwiki.contrib.cristal.integration.rest.resources.CristalPageResource;
 import org.xwiki.model.reference.DocumentReference;
 import org.xwiki.rest.XWikiResource;
 import org.xwiki.rest.XWikiRestException;
@@ -42,6 +42,7 @@ import org.xwiki.security.authservice.internal.AuthServiceConfiguration;
 import com.xpn.xwiki.XWikiContext;
 import com.xpn.xwiki.XWikiException;
 import com.xpn.xwiki.api.Document;
+import com.xpn.xwiki.doc.DocumentRevisionProvider;
 import com.xpn.xwiki.doc.XWikiDocument;
 import com.xpn.xwiki.web.ExternalServletURLFactory;
 import com.xpn.xwiki.web.XWikiURLFactory;
@@ -50,19 +51,22 @@ import jakarta.json.Json;
 import jakarta.json.JsonObjectBuilder;
 
 /**
- * Default implementation of {@link CristalResource}.
+ * Default implementation of {@link CristalPageResource}.
  *
  * @version $Id$
  */
 @Component
-@Named("org.xwiki.contrib.cristal.integration.rest.internal.resources.CristalResourceImpl")
-public class CristalResourceImpl extends XWikiResource implements CristalResource
+@Named("org.xwiki.contrib.cristal.integration.rest.internal.resources.CristalPageResourceImpl")
+public class CristalPageResourceImpl extends XWikiResource implements CristalPageResource
 {
     @Inject
     private AuthServiceConfiguration authServiceConfiguration;
 
     @Inject
     private ContextualAuthorizationManager contextualAuthorizationManager;
+
+    @Inject
+    private DocumentRevisionProvider documentRevisionProvider;
 
     @Override
     public void initialize() throws InitializationException
@@ -105,7 +109,14 @@ public class CristalResourceImpl extends XWikiResource implements CristalResourc
                 XWikiContext context = getXWikiContext();
                 XWikiURLFactory externalUrlFactory = new ExternalServletURLFactory(context);
                 context.setURLFactory(externalUrlFactory);
-                XWikiDocument xdoc = context.getWiki().getDocument(doc.getDocumentReference(), context);
+
+                XWikiDocument xdoc;
+                if (revision != null && !revision.isEmpty()) {
+                    xdoc = this.documentRevisionProvider.getRevision(documentReference, revision);
+                } else {
+                    xdoc = context.getWiki().getDocument(doc.getDocumentReference(), context);
+                }
+
                 context.setDoc(xdoc);
                 builder.add("html", xdoc.getRenderedContent(context));
 

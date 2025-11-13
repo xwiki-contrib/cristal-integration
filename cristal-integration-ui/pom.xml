@@ -20,31 +20,29 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.xwiki.contrib.cristal.integration</groupId>
     <artifactId>cristal-integration</artifactId>
     <version>1.1.2-SNAPSHOT</version>
   </parent>
-  <artifactId>cristal-integration-rest-api</artifactId>
-  <packaging>jar</packaging>
-  <name>Cristal Integration - REST API</name>
-  <description>REST API to allow connection from a Cristal instance</description>
+  <artifactId>cristal-integration-ui</artifactId>
+  <packaging>xar</packaging>
+  <name>Cristal Integration - UI</name>
+  <description>UI elements to interact with the embedded Cristal instance</description>
+
   <properties>
-    <xwiki.extension.name>Cristal Integration - REST API</xwiki.extension.name>
-    <xwiki.extension.category>api</xwiki.extension.category>
+    <xwiki.extension.category>application</xwiki.extension.category>
+    <xwiki.extension.name>Cristal Integration Application</xwiki.extension.name>
   </properties>
 
   <dependencies>
     <dependency>
-      <groupId>jakarta.ws.rs</groupId>
-      <artifactId>jakarta.ws.rs-api</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.xwiki.platform</groupId>
-      <artifactId>xwiki-platform-rest-api</artifactId>
-      <version>${platform.version}</version>
+      <groupId>org.xwiki.contrib.cristal.integration</groupId>
+      <artifactId>cristal-integration-resource-handler</artifactId>
+      <version>${project.version}</version>
+      <scope>runtime</scope>
     </dependency>
   </dependencies>
 </project>
