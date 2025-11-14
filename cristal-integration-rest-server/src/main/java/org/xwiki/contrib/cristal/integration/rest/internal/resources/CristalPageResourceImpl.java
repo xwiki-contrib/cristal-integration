@@ -29,7 +29,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import org.xwiki.component.annotation.Component;
-import org.xwiki.component.phase.InitializationException;
 import org.xwiki.contrib.cristal.integration.rest.resources.CristalPageResource;
 import org.xwiki.model.reference.DocumentReference;
 import org.xwiki.rest.XWikiResource;
@@ -37,7 +36,6 @@ import org.xwiki.rest.XWikiRestException;
 import org.xwiki.security.authorization.AccessDeniedException;
 import org.xwiki.security.authorization.ContextualAuthorizationManager;
 import org.xwiki.security.authorization.Right;
-import org.xwiki.security.authservice.internal.AuthServiceConfiguration;
 
 import com.xpn.xwiki.XWikiContext;
 import com.xpn.xwiki.XWikiException;
@@ -60,30 +58,10 @@ import jakarta.json.JsonObjectBuilder;
 public class CristalPageResourceImpl extends XWikiResource implements CristalPageResource
 {
     @Inject
-    private AuthServiceConfiguration authServiceConfiguration;
-
-    @Inject
     private ContextualAuthorizationManager contextualAuthorizationManager;
 
     @Inject
     private DocumentRevisionProvider documentRevisionProvider;
-
-    @Override
-    public void initialize() throws InitializationException
-    {
-        String oidcAuthServiceId = "oidc-provider-bridge";
-
-        // Check that the current auth service is OIDC, and change it otherwise.
-        try {
-            if (!this.authServiceConfiguration.getAuthService().equals(oidcAuthServiceId)) {
-                this.authServiceConfiguration.setAuthServiceId(oidcAuthServiceId);
-            }
-        } catch (XWikiException e) {
-            throw new InitializationException("Error when trying to set auth service to OIDC.", e);
-        }
-
-        super.initialize();
-    }
 
     @Override
     public Response getPage(String wikiName, String spaceName, String pageName, String format,

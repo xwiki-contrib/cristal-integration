@@ -17,44 +17,39 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.xwiki.contrib.cristal.integration.headless.internal;
+package org.xwiki.contrib.cristal.integration.rest.internal.resources;
 
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.inject.Singleton;
 
 import org.xwiki.component.annotation.Component;
-import org.xwiki.component.phase.Initializable;
-import org.xwiki.component.phase.InitializationException;
+import org.xwiki.contrib.cristal.integration.rest.resources.CristalAuthResource;
+import org.xwiki.rest.XWikiResource;
+import org.xwiki.rest.XWikiRestException;
 import org.xwiki.security.authservice.internal.AuthServiceConfiguration;
 
 import com.xpn.xwiki.XWikiException;
 
 /**
- * Initialization component for external Cristal instances.
+ * Default implementation of {@link CristalAuthResource}.
  *
+ * @since 1.2.0
  * @version $Id$
  */
 @Component
-@Named("CristalHeadlessInitializer")
-@Singleton
-public class CristalHeadlessInitializer implements Initializable
+@Named("org.xwiki.contrib.cristal.integration.rest.internal.resources.CristalAuthResourceImpl")
+public class CristalAuthResourceImpl extends XWikiResource implements CristalAuthResource
 {
     @Inject
     private AuthServiceConfiguration authServiceConfiguration;
 
     @Override
-    public void initialize() throws InitializationException
+    public String getAuthenticationService() throws XWikiRestException
     {
-        String oidcAuthServiceId = "oidc-provider-bridge";
-
-        // Check that the current auth service is OIDC, and change it otherwise.
         try {
-            if (!this.authServiceConfiguration.getAuthService().equals(oidcAuthServiceId)) {
-                this.authServiceConfiguration.setAuthServiceId(oidcAuthServiceId);
-            }
+            return this.authServiceConfiguration.getAuthService();
         } catch (XWikiException e) {
-            throw new InitializationException("Error when trying to set auth service to OIDC.", e);
+            throw new XWikiRestException("Error when trying to fetch authentication service.", e);
         }
     }
 }
