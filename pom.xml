@@ -29,7 +29,7 @@
   </parent>
   <groupId>org.xwiki.contrib.cristal.integration</groupId>
   <artifactId>cristal-integration</artifactId>
-  <version>1.1.2-SNAPSHOT</version>
+  <version>1.2.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Cristal Integration</name>
   <description>APIs and services to integrate with a Cristal instance</description>
@@ -39,6 +39,8 @@
     <module>cristal-integration-webjar</module>
     <module>cristal-integration-resource-handler</module>
     <module>cristal-integration-ui</module>
+    <module>cristal-integration-headless</module>
+    <module>cristal-integration-headless-rest-server</module>
   </modules>
 
   <profiles>

@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<!--
+/*
  * See the NOTICE file distributed with this work for additional
  * information regarding copyright ownership.
  *
@@ -18,26 +16,27 @@
  * License along with this software; if not, write to the Free
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
--->
+ */
+package org.xwiki.contrib.cristal.integration.rest.resources;
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>org.xwiki.contrib.cristal.integration</groupId>
-    <artifactId>cristal-integration</artifactId>
-    <version>1.2.0-SNAPSHOT</version>
-  </parent>
-  <artifactId>cristal-integration-test</artifactId>
-  <packaging>pom</packaging>
-  <name>Cristal Integration - REST Server - Tests</name>
-  <description>Functional tests for Cristal's REST API</description>
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
 
-  <profiles>
-    <profile>
-      <id>docker</id>
-      <modules>
-        <module>cristal-integration-test-docker</module>
-      </modules>
-    </profile>
-  </profiles>
-</project>
+import org.xwiki.rest.XWikiRestException;
+
+/**
+ * Enables a Cristal client to access the current authentication service.
+ *
+ * @since 1.2.0
+ * @version $Id$
+ */
+@Path("/cristal/auth")
+public interface CristalAuthResource
+{
+    /**
+     * Returns the name of the current authentication service.
+     *
+     * @return the current authentication service
+     */
+    @GET String getAuthenticationService() throws XWikiRestException;
+}

@@ -27,24 +27,38 @@
     <artifactId>cristal-integration</artifactId>
     <version>1.2.0-SNAPSHOT</version>
   </parent>
-  <artifactId>cristal-integration-rest-api</artifactId>
+  <artifactId>cristal-integration-headless</artifactId>
   <packaging>jar</packaging>
-  <name>Cristal Integration - REST API</name>
-  <description>REST API to allow connection from a Cristal instance</description>
+  <name>Cristal Integration - Headless</name>
+  <description>Configuration components to allow access to external Cristal instances</description>
+
   <properties>
-    <xwiki.extension.name>Cristal Integration - REST API</xwiki.extension.name>
-    <xwiki.extension.category>api</xwiki.extension.category>
+    <xwiki.extension.name>Cristal Integration - Headless</xwiki.extension.name>
+    <xwiki.extension.category>application</xwiki.extension.category>
   </properties>
 
   <dependencies>
     <dependency>
-      <groupId>jakarta.ws.rs</groupId>
-      <artifactId>jakarta.ws.rs-api</artifactId>
+      <groupId>org.xwiki.commons</groupId>
+      <artifactId>xwiki-commons-component-api</artifactId>
+      <version>${commons.version}</version>
     </dependency>
     <dependency>
       <groupId>org.xwiki.platform</groupId>
-      <artifactId>xwiki-platform-rest-api</artifactId>
+      <artifactId>xwiki-platform-oldcore</artifactId>
       <version>${platform.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.xwiki.contrib.cristal.integration</groupId>
+      <artifactId>cristal-integration-rest-server</artifactId>
+      <version>${project.version}</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.xwiki.contrib.cristal.integration</groupId>
+      <artifactId>cristal-integration-headless-rest-server</artifactId>
+      <version>${project.version}</version>
+      <scope>runtime</scope>
     </dependency>
   </dependencies>
 </project>
