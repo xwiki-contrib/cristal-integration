@@ -18,10 +18,10 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
 
+import { ComponentInit as XWikiAuthenticationComponentInit } from "./components/XWikiAuthenticationManager";
 import { ComponentInit as XWikiRouterComponentInit } from "./components/router";
 import { ComponentInit as XWikiSwitchComponentInit } from "./ui/XWikiSwitchUIExtension";
 import { CristalAppLoader, defaultComponentsList } from "@xwiki/cristal-lib";
-import { ComponentInit as AuthenticationXWikiComponentInit } from "@xwiki/cristal-authentication-xwiki";
 import { ComponentInit as BrowserComponentInit } from "@xwiki/cristal-browser-default";
 import { ComponentInit as VueDSComponentInit } from "@xwiki/cristal-dsvuetify";
 import { ComponentInit as XWikiPageHierarchyComponentInit } from "@xwiki/cristal-hierarchy-xwiki";
@@ -60,8 +60,8 @@ CristalAppLoader.init(
   async (container) => {
     await defaultComponentsList(container);
     new BrowserComponentInit(container);
-    new AuthenticationXWikiComponentInit(container);
     new BrowserSettingsComponentInit(container);
+    new XWikiAuthenticationComponentInit(container);
     new XWikiRouterComponentInit(container);
     new XWikiSwitchComponentInit(container);
   },
