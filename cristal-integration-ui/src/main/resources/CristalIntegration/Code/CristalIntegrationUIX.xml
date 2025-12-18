@@ -130,7 +130,7 @@
   var url = "/xwiki/cristal/#/";
 
   if (xm.documentReference) {
-    const localDocumentReference = xm.documentReference.relativeTo(xm.documentReference.wiki);
+    const localDocumentReference = xm.documentReference.relativeTo(xm.documentReference.getRoot());
     url = `/xwiki/cristal/#/${XWiki.Model.serialize(localDocumentReference)}/view`;
   }
 
