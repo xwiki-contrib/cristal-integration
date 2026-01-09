@@ -34,7 +34,7 @@
     "@xwiki/cristal-navigation-tree-xwiki": "0.24.0",
     "@xwiki/cristal-settings-browser": "0.24.0",
     "@xwiki/cristal-uiextension-api": "0.24.0",
-    "inversify": "7.10.4",
+    "inversify": "7.11.0",
     "vue-i18n": "11.1.12",
     "vue-router": "4.6.3"
   },
