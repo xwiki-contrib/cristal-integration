@@ -20,14 +20,14 @@
 
 <script lang="ts" setup>
 import messages from "../translations";
-import { CIcon, Size } from "@xwiki/cristal-icons";
+import { CIcon, Size } from "@xwiki/platform-icons";
 import { inject } from "vue";
 import { useI18n } from "vue-i18n";
-import type { CristalApp } from "@xwiki/cristal-api";
-import type { DocumentService } from "@xwiki/cristal-document-api";
+import type { CristalApp } from "@xwiki/platform-api";
+import type { DocumentService } from "@xwiki/platform-document-api";
 import type {
   RemoteURLSerializerProvider,
-} from "@xwiki/cristal-model-remote-url-api";
+} from "@xwiki/platform-model-remote-url-api";
 
 const { t } = useI18n({
   messages,
