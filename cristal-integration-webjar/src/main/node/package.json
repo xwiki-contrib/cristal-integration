@@ -31,7 +31,7 @@
     "@xwiki/cristal-uiextension-api": "1.0.0",
     "@xwiki/platform-api": "18.0.0",
     "@xwiki/platform-authentication-api": "18.0.0",
-    "@xwiki/platform-document-api": "18.0.0",
+    "@xwiki/platform-document-api": "18.0.1",
     "@xwiki/platform-icons": "18.0.0",
     "@xwiki/platform-model-remote-url-api": "18.0.0",
     "inversify": "7.11.0",
