@@ -57,35 +57,4 @@
       <scope>runtime</scope>
     </dependency>
   </dependencies>
-  <build>
-    <plugins>
-      <plugin>
-        <artifactId>maven-resources-plugin</artifactId>
-        <executions>
-          <execution>
-            <!-- Copy the remaining less file. -->
-            <id>copy-less-resources</id>
-            <phase>validate</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>
-                ${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}
-              </outputDirectory>
-              <resources>
-                <resource>
-                  <directory>${project.build.directory}/node-src/src/</directory>
-                  <includes>
-                    <include>variables.less</include>
-                    <include>reactive.less</include>
-                  </includes>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
 </project>

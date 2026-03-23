@@ -29,6 +29,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig({
   build: {
+    outDir: "../../../target/node-dist",
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       fileName: (format, entryName) => `${entryName}.${format}.js`,
