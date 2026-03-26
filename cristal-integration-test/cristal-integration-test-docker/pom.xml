@@ -38,12 +38,6 @@
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>org.xwiki.contrib.cristal.integration</groupId>
-      <artifactId>cristal-integration-rest-api</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-
     <!--Test only dependencies. -->
     <dependency>
       <groupId>org.xwiki.platform</groupId>
@@ -51,11 +45,18 @@
       <version>${platform.version}</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.xwiki.contrib.cristal.integration</groupId>
+      <artifactId>cristal-integration-rest-api</artifactId>
+      <version>${project.version}</version>
+      <scope>test</scope>
+    </dependency>
 
     <dependency>
       <groupId>org.xwiki.contrib.cristal.integration</groupId>
-      <artifactId>cristal-integration-rest-server</artifactId>
+      <artifactId>cristal-integration-ui</artifactId>
       <version>${project.version}</version>
+      <type>xar</type>
       <scope>runtime</scope>
     </dependency>
     <dependency>
