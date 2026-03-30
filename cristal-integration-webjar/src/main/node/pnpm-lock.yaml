@@ -48,8 +48,8 @@ importers:
         specifier: 18.1.0
         version: 18.1.0(inversify@7.11.0(reflect-metadata@0.2.2))(reflect-metadata@0.2.2)(vue-router@4.6.4(vue@3.5.28(typescript@5.9.3)))(vue@3.5.28(typescript@5.9.3))
       '@xwiki/platform-authentication-api':
-        specifier: 18.1.0
-        version: 18.1.0(reflect-metadata@0.2.2)
+        specifier: 18.2.0
+        version: 18.2.0(reflect-metadata@0.2.2)
       '@xwiki/platform-document-api':
         specifier: 18.1.0
         version: 18.1.0(inversify@7.11.0(reflect-metadata@0.2.2))(reflect-metadata@0.2.2)(vue-router@4.6.4(vue@3.5.28(typescript@5.9.3)))(vue@3.5.28(typescript@5.9.3))
@@ -1662,6 +1662,11 @@ packages:
 
   '@xwiki/platform-authentication-api@18.1.0':
     resolution: {integrity: sha512-NoUKaCItP+P9GD2KZJNtMpjMAbWb7vU78YWWm01gIFQ3Klo19pn+7umS4FxLzl2omYt1Jom0XaD+7Q4JQivVJQ==}
+    peerDependencies:
+      reflect-metadata: 0.x
+
+  '@xwiki/platform-authentication-api@18.2.0':
+    resolution: {integrity: sha512-1ENFjHEEpA0LHhIc5pzJAopdJ6jcGMWXO4GBG8O1/yf87MdrONC7fEaXZZlN4YK2kw2blCvUvBPhC7pE4h35Sw==}
     peerDependencies:
       reflect-metadata: 0.x
 
@@ -5518,6 +5523,10 @@ snapshots:
       - vue-router
 
   '@xwiki/platform-authentication-api@18.1.0(reflect-metadata@0.2.2)':
+    dependencies:
+      reflect-metadata: 0.2.2
+
+  '@xwiki/platform-authentication-api@18.2.0(reflect-metadata@0.2.2)':
     dependencies:
       reflect-metadata: 0.2.2
 
