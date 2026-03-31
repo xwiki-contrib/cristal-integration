@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@xwiki/cristal-authentication-xwiki-utils':
+        specifier: 1.2.0
+        version: 1.2.0(reflect-metadata@0.2.2)
       '@xwiki/cristal-browser-default':
         specifier: 1.2.0
         version: 1.2.0(inversify@7.11.0(reflect-metadata@0.2.2))(reflect-metadata@0.2.2)(vue-router@5.0.3(@vue/compiler-sfc@3.5.30)(pinia@3.0.4(typescript@5.9.3)(vue@3.5.30(typescript@5.9.3)))(vue@3.5.30(typescript@5.9.3)))(vue@3.5.30(typescript@5.9.3))
@@ -1264,6 +1267,9 @@ packages:
       inversify: 7.x
       reflect-metadata: 0.x
       vue: 3.x
+
+  '@xwiki/cristal-authentication-xwiki-utils@1.2.0':
+    resolution: {integrity: sha512-+JDrK9n4nyL/cjp3hHGa3SotV7weJoscPJfmbwKffplSjdVTcJMnoJK0ue1oM0QZp8GmKQnjOdSZzQE9yhI6fw==}
 
   '@xwiki/cristal-backend-dexie@1.2.0':
     resolution: {integrity: sha512-jTMmYcGp7k3GncTWEed3OdbrB12bWAZqKeDgsYwtPYv0WHuAltqfjqtNfhq9w+XSmm+zV+RxKtJCpowG532N8g==}
@@ -4819,6 +4825,12 @@ snapshots:
       vue-i18n: 11.2.8(vue@3.5.30(typescript@5.9.3))
     transitivePeerDependencies:
       - vue-router
+
+  '@xwiki/cristal-authentication-xwiki-utils@1.2.0(reflect-metadata@0.2.2)':
+    dependencies:
+      '@xwiki/platform-authentication-api': 18.2.0(reflect-metadata@0.2.2)
+    transitivePeerDependencies:
+      - reflect-metadata
 
   '@xwiki/cristal-backend-dexie@1.2.0(inversify@7.11.0(reflect-metadata@0.2.2))(reflect-metadata@0.2.2)(vue-router@5.0.3(@vue/compiler-sfc@3.5.30)(pinia@3.0.4(typescript@5.9.3)(vue@3.5.30(typescript@5.9.3)))(vue@3.5.30(typescript@5.9.3)))(vue@3.5.30(typescript@5.9.3))':
     dependencies:
