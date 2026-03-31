@@ -29,7 +29,7 @@
   </parent>
   <groupId>org.xwiki.contrib.cristal.integration</groupId>
   <artifactId>cristal-integration</artifactId>
-  <version>1.5.0-SNAPSHOT</version>
+  <version>1.6.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Cristal Integration</name>
   <description>APIs and services to integrate with a Cristal instance</description>
