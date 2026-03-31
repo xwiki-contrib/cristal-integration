@@ -18,6 +18,7 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
 
+import { fetchUserDetails } from "@xwiki/cristal-authentication-xwiki-utils";
 import { inject, injectable } from "inversify";
 import type { CristalApp } from "@xwiki/platform-api";
 import type {
@@ -47,8 +48,10 @@ class XWikiAuthenticationManager implements AuthenticationManager {
   }
 
   async getUserDetails(): Promise<UserDetails> {
-    // TODO: Support user details (CRISTALINT-18).
-    throw "User details are not supported yet.";
+    return fetchUserDetails(
+      `${this.cristalApp.getWikiConfig().baseURL}/rest/wikis/xwiki/user`,
+      (await this.getAuthorizationHeader())!,
+    );
   }
 
   async logout(): Promise<void> {

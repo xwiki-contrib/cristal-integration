@@ -17,6 +17,7 @@
     "type-check": "vue-tsc --build"
   },
   "dependencies": {
+    "@xwiki/cristal-authentication-xwiki-utils": "1.2.0",
     "@xwiki/cristal-browser-default": "1.2.0",
     "@xwiki/cristal-dsvuetify": "1.2.0",
     "@xwiki/cristal-editors-blocknote": "1.2.0",
