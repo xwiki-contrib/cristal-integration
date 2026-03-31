@@ -31,11 +31,6 @@ import org.xwiki.test.docker.junit5.UITest;
 public class AllIT
 {
     @Nested
-    class NestedCristalPageResourceIT extends CristalPageResourceIT
-    {
-    }
-
-    @Nested
     class NestedDrawerExtensionIT extends DrawerExtensionIT
     {
     }

@@ -35,7 +35,6 @@
   <description>APIs and services to integrate with a Cristal instance</description>
   <modules>
     <module>cristal-integration-rest-api</module>
-    <module>cristal-integration-rest-server</module>
     <module>cristal-integration-webjar</module>
     <module>cristal-integration-resource-handler</module>
     <module>cristal-integration-ui</module>
@@ -115,6 +114,20 @@
                   <ignore>true</ignore>
                   <code>java.class.added</code>
                   <new>interface org.xwiki.contrib.cristal.integration.rest.resources.CristalPageResource</new>
+                </item>
+              </differences>
+            </revapi.differences>
+            <revapi.differences>
+              <justification>
+                This resource is no longer necessary with the 1.2.0 release of Cristal and the parent update to XWiki 18.2.0.
+                Each Cristal Integration release only support a given Cristal version so there is no retro-compatibility issue.
+              </justification>
+              <criticality>documented</criticality>
+              <differences>
+                <item>
+                  <ignore>true</ignore>
+                  <code>java.class.removed</code>
+                  <old>interface org.xwiki.contrib.cristal.integration.rest.resources.CristalPageResource</old>
                 </item>
               </differences>
             </revapi.differences>

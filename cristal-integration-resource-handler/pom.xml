@@ -77,12 +77,6 @@
     </dependency>
     <dependency>
       <groupId>org.xwiki.contrib.cristal.integration</groupId>
-      <artifactId>cristal-integration-rest-server</artifactId>
-      <version>${project.version}</version>
-      <scope>runtime</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.xwiki.contrib.cristal.integration</groupId>
       <artifactId>cristal-integration-webjar</artifactId>
       <version>${project.version}</version>
       <scope>runtime</scope>
