@@ -36,7 +36,7 @@
     "@xwiki/platform-icons": "18.3.0",
     "@xwiki/platform-model-remote-url-api": "18.3.0",
     "inversify": "8.1.0",
-    "vue-router": "5.0.3"
+    "vue-router": "5.0.6"
   },
   "devDependencies": {
     "@eslint/eslintrc": "3.3.5",
