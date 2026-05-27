@@ -51,8 +51,8 @@ importers:
         specifier: 18.3.0
         version: 18.3.0(inversify@8.1.0(reflect-metadata@0.2.2))(reflect-metadata@0.2.2)(vue-router@5.0.3(@vue/compiler-sfc@3.5.30)(pinia@3.0.4(typescript@5.9.3)(vue@3.5.30(typescript@5.9.3)))(vue@3.5.30(typescript@5.9.3)))(vue@3.5.30(typescript@5.9.3))
       '@xwiki/platform-authentication-api':
-        specifier: 18.3.0
-        version: 18.3.0(reflect-metadata@0.2.2)
+        specifier: 18.4.0
+        version: 18.4.0(reflect-metadata@0.2.2)
       '@xwiki/platform-document-api':
         specifier: 18.3.0
         version: 18.3.0(inversify@8.1.0(reflect-metadata@0.2.2))(reflect-metadata@0.2.2)(vue-router@5.0.3(@vue/compiler-sfc@3.5.30)(pinia@3.0.4(typescript@5.9.3)(vue@3.5.30(typescript@5.9.3)))(vue@3.5.30(typescript@5.9.3)))(vue@3.5.30(typescript@5.9.3))
@@ -1080,6 +1080,7 @@ packages:
 
   '@ungap/structured-clone@1.3.0':
     resolution: {integrity: sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==}
+    deprecated: Potential CWE-502 - Update to 1.3.1 or higher
 
   '@vitejs/plugin-vue@6.0.5':
     resolution: {integrity: sha512-bL3AxKuQySfk1iGcBsQnoRVexTPJq0Z/ixFVM8OhVJAP6ZXXXLtM7NFKWhLl30Kg7uTBqIaPXbh+nuQCuBDedg==}
@@ -1814,6 +1815,11 @@ packages:
 
   '@xwiki/platform-authentication-api@18.3.0':
     resolution: {integrity: sha512-1XwTx/feUbwGfwo011a1iXlDlffTv3chABdQYId4K8Y9HCB3UxAg7mwPaW1RsF2ct6SMeKVt8VAXno5NxmHa8g==}
+    peerDependencies:
+      reflect-metadata: 0.x
+
+  '@xwiki/platform-authentication-api@18.4.0':
+    resolution: {integrity: sha512-ayjdqIYXxbrYmoXCUSRxM5jie2Bt4PrV/4WgDda0ww5GA6BAUYFrN6P3Pn9RBiPDJeEQp5OOSJunyz2u6hVoKQ==}
     peerDependencies:
       reflect-metadata: 0.x
 
@@ -6017,6 +6023,10 @@ snapshots:
       - vue-router
 
   '@xwiki/platform-authentication-api@18.3.0(reflect-metadata@0.2.2)':
+    dependencies:
+      reflect-metadata: 0.2.2
+
+  '@xwiki/platform-authentication-api@18.4.0(reflect-metadata@0.2.2)':
     dependencies:
       reflect-metadata: 0.2.2
 
