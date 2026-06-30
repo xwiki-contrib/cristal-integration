@@ -24,9 +24,9 @@ import { ComponentInit as XWikiSwitchComponentInit } from "./ui/XWikiSwitchUIExt
 import { CristalAppLoader, defaultComponentsList } from "@xwiki/cristal-lib";
 import { ComponentInit as BrowserComponentInit } from "@xwiki/cristal-browser-default";
 import { ComponentInit as VueDSComponentInit } from "@xwiki/cristal-dsvuetify";
-import { ComponentInit as XWikiPageHierarchyComponentInit } from "@xwiki/cristal-hierarchy-xwiki";
+import { ComponentInit as XWikiPageHierarchyComponentInit } from "@xwiki/platform-hierarchy-xwiki";
 import { ComponentInit as XWikiPageHistoryComponentInit } from "@xwiki/cristal-history-xwiki";
-import { ComponentInit as XWikiLinkSuggestComponentInit } from "@xwiki/cristal-link-suggest-xwiki";
+import { ComponentInit as XWikiLinkSuggestComponentInit } from "@xwiki/platform-link-suggest-xwiki";
 import { ComponentInit as ModelReferenceXWikiComponentInit } from "@xwiki/cristal-model-reference-xwiki";
 import { ComponentInit as ModelRemoteURLXWikiComponentInit } from "@xwiki/cristal-model-remote-url-xwiki";
 import { ComponentInit as XWikiNavigationTreeComponentInit } from "@xwiki/cristal-navigation-tree-xwiki";
