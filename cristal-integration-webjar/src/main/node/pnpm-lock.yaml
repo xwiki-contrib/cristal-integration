@@ -57,8 +57,8 @@ importers:
         specifier: 18.4.0
         version: 18.4.0(inversify@8.1.0(reflect-metadata@0.2.2))(reflect-metadata@0.2.2)(vue-router@5.0.3(@vue/compiler-sfc@3.5.30)(pinia@3.0.4(typescript@5.9.3)(vue@3.5.30(typescript@5.9.3)))(vue@3.5.30(typescript@5.9.3)))(vue@3.5.30(typescript@5.9.3))
       '@xwiki/platform-icons':
-        specifier: 18.4.0
-        version: 18.4.0(reflect-metadata@0.2.2)(vue@3.5.30(typescript@5.9.3))
+        specifier: 18.4.2
+        version: 18.4.2(reflect-metadata@0.2.2)(vue@3.5.30(typescript@5.9.3))
       '@xwiki/platform-model-remote-url-api':
         specifier: 18.4.0
         version: 18.4.0(inversify@8.1.0(reflect-metadata@0.2.2))(reflect-metadata@0.2.2)(vue-router@5.0.3(@vue/compiler-sfc@3.5.30)(pinia@3.0.4(typescript@5.9.3)(vue@3.5.30(typescript@5.9.3)))(vue@3.5.30(typescript@5.9.3)))(vue@3.5.30(typescript@5.9.3))
@@ -1798,6 +1798,12 @@ packages:
 
   '@xwiki/platform-icons@18.4.0':
     resolution: {integrity: sha512-Td/8gr4VkB2Ly14vSraHaL6Hi4izCHEH8FEFQY+Q5xwViNDhRxjvD3oorfBSq4wBzLRn9R0+BKdgQ4VmE5C15w==}
+    peerDependencies:
+      reflect-metadata: 0.x
+      vue: 3.x
+
+  '@xwiki/platform-icons@18.4.2':
+    resolution: {integrity: sha512-ggHReebbEPlZxemqRGIMU4uOOkcc6XReIDyUnAY4QoBgGqU6R1zgEeSfm7vXISlNOKIM5vZuSL56a2weHJnxYA==}
     peerDependencies:
       reflect-metadata: 0.x
       vue: 3.x
@@ -6021,6 +6027,12 @@ snapshots:
   '@xwiki/platform-fn-utils@18.4.0': {}
 
   '@xwiki/platform-icons@18.4.0(reflect-metadata@0.2.2)(vue@3.5.30(typescript@5.9.3))':
+    dependencies:
+      bootstrap-icons: 1.13.1
+      reflect-metadata: 0.2.2
+      vue: 3.5.30(typescript@5.9.3)
+
+  '@xwiki/platform-icons@18.4.2(reflect-metadata@0.2.2)(vue@3.5.30(typescript@5.9.3))':
     dependencies:
       bootstrap-icons: 1.13.1
       reflect-metadata: 0.2.2
