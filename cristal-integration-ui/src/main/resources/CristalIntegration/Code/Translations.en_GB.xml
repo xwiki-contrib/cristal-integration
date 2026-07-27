@@ -36,7 +36,7 @@
   <minorEdit>false</minorEdit>
   <syntaxId>plain/1.0</syntaxId>
   <hidden>true</hidden>
-  <content>### Missing: cristal.integration.drawer.text=
-### Missing: cristal.integration.shortcut=
+  <content>cristal.integration.drawer.text=Switch to Cristal
+cristal.integration.shortcut=x+x+x+c
 </content>
 </xwikidoc>
