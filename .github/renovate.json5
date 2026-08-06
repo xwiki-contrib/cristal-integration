@@ -45,11 +45,19 @@
 
     // Group all cristal releases in the same PR.
     {
-      "matchDatasources": [
-        "npm"
-      ],
+      "matchDatasources": ["npm"],
       "groupName": "cristal",
       "matchDepPatterns": "@xwiki/cristal-.+"
+    },
+    {
+      "matchDatasources": ["npm"],
+      "groupName": "xwiki-platform",
+      "matchDepPatterns": "@xwiki/platform-.+"
+    },
+    {
+      "matchDatasources": ["npm"],
+      "excludeDepPatterns": ["@xwiki/.+"],
+      "minimumReleaseAge": "7 days"
     }
   ]
 }
