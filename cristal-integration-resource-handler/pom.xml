@@ -81,5 +81,11 @@
       <version>${project.version}</version>
       <scope>runtime</scope>
     </dependency>
+    <dependency>
+      <groupId>org.xwiki.contrib.markdown</groupId>
+      <artifactId>syntax-markdown-commonmark12</artifactId>
+      <version>${markdown.version}</version>
+      <scope>runtime</scope>
+    </dependency>
   </dependencies>
 </project>
