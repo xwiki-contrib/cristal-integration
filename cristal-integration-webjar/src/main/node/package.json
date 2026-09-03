@@ -42,7 +42,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "3.3.5",
     "@eslint/js": "10.0.1",
-    "@types/jsdom": "28.0.3",
+    "@types/jsdom": "30.0.0",
     "@types/node": "24.12.4",
     "@vitejs/plugin-vue": "6.0.7",
     "@vitest/eslint-plugin": "1.6.26",
